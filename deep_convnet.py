@@ -1,9 +1,12 @@
 # coding: utf-8
-import sys, os
 import pickle
 import numpy as np
-from collections import OrderedDict
-from common.layers import *
+from common.layers import Relu
+from common.layers import Convolution
+from common.layers import Pooling
+from common.layers import Affine
+from common.layers import Dropout
+from common.layers import SoftmaxWithLoss
 
 
 class DeepConvNet:
@@ -134,7 +137,7 @@ class DeepConvNet:
         return self.last_layer.forward(y, t)
 
     def accuracy(self, x, t, batch_size=100):
-        if t.ndim != 1: t = np.argmax(t, axis=1)
+        if t.ndim != 1:t = np.argmax(t, axis=1)
 
         acc = 0.0
 

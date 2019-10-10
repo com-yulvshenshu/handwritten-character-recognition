@@ -1,6 +1,11 @@
 # coding: utf-8
 import numpy as np
-from optimizer import *
+from optimizer import SGD
+from optimizer import Momentum
+from optimizer import Nesterov
+from optimizer import AdaGrad
+from optimizer import RMSprop
+from optimizer import Adam
 
 
 class Trainer:
